@@ -213,7 +213,7 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -20vh;
+            top: 0;
             left: 0;
             right: 0;
             bottom: 0vh;
@@ -228,6 +228,8 @@
             max-width: 800px;
             margin: 0 auto;
             margin-top: 20vh;
+            padding: 2rem 1rem;
+            margin-top: 10vh;
             
         }
         
@@ -235,21 +237,24 @@
             margin-bottom: 1rem;
             color: white;
             text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
-            font-size: 5rem;
+             font-size: clamp(2.5rem, 8vw, 5rem); /* Responsive font size */
+            line-height: 1.2;
         }
         
         .hero .tagline {
-            font-size: 1.5rem;
+             font-size: clamp(1rem, 4vw, 1.5rem);
             color: white;
             margin-bottom: 2rem;
             opacity: 0.9;
+            padding: 0 1rem;
         }
         
         .hero-cta {
-            display: flex;
+         display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
         
         /* About Section */
@@ -629,6 +634,40 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            .hero-content {
+                margin-top: 15vh;
+                padding: 1rem;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-space {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                justify-content: center;
+            }
+            
+            /* Keep your existing mobile styles below */
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255,255,255,0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
             .menu-toggle {
                 display: block;
             }
@@ -763,6 +802,15 @@
         
         .back-to-top:hover {
             transform: translateY(-5px);
+        }
+           @media (max-width: 480px) {
+            .hero-content {
+                margin-top: 12vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
