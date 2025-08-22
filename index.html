@@ -9,15 +9,15 @@
     <style>
         /* Global Styles */
         :root {
-            --primary:rgba(75, 117, 151, 0.75);
-            --secondary:rgba(120, 180, 220, 1);
-            --accent: rgb(109, 202, 242);
+            --primary:rgba(85, 123, 153, 1);
+            --secondary:rgb(141, 161, 180);
+            --accent: rgba(210, 218, 212, 1);
             --dark: #0f172a;
             --light: #f8fafc;
             --text: #1e293b;
             --muted: #64748b;
             --white: #ffffff;
-            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 75%, var(--accent) 100%);
         }
         
         * {
@@ -86,7 +86,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 1rem;
-           background: linear-gradient(to bottom right, rgba(75, 117, 151, 1), rgba(75, 117, 151, 0.5));
+           background: var(--gradient);
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -96,6 +96,7 @@
             cursor: pointer;
             box-shadow: 4px 4px 15px rgba(0,0, 0, 0.5);
             top: 150vh;
+            margin-bottom: 20px;
         }
         
         .btn-space:hover {
@@ -318,13 +319,13 @@
         }
         
         .skill-category {
-            background: white;
+            background: var(--primary);
             padding: 2rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
             border-top: 4px solid transparent;
-            background-image: var(--gradient);
+            background-image: var(--primary);
             background-clip: padding-box;
         }
         
@@ -333,7 +334,7 @@
         }
         
         .skill-category h3 {
-            color: var(--dark);
+            color: var(--accent);
             margin-bottom: 1.5rem;
         }
         
@@ -348,6 +349,7 @@
             align-items: center;
             gap: 1rem;
             font-weight: 500;
+            color: var(--accent);
         }
         
         .skill-list li:last-child {
@@ -356,7 +358,7 @@
         
         .skill-list li::before {
             content: '✦';
-            color: var(--secondary);
+            color: var(--accent);
             font-size: 1.2rem;
         }
         
@@ -683,6 +685,26 @@
             .container {
                 padding: 0 1rem;
             }
+            .btn-download {
+    background: var(--gradient);
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    margin-top: 20px;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+    color: white;
+}
         }
         
         /* Animations */
@@ -781,6 +803,12 @@
                         <i class="fas fa-user"></i>
                         About Me
                     </a>
+                     </div>
+                      <div class="hero-cta"></div>
+                        <a href="CV/griffin-trace-no-contact.pdf" class="btn btn-download" download>
+        <i class="fas fa-download"></i>
+        Download CV
+    </a>
                 </div>
             </div>
         </div>
